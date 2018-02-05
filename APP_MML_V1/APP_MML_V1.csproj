@@ -96,6 +96,7 @@
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Drawing" />
+    <Reference Include="System.Security" />
     <Reference Include="System.Web.Cors, Version=5.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.AspNet.Cors.5.0.0\lib\net45\System.Web.Cors.dll</HintPath>
       <Private>True</Private>
@@ -250,19 +251,715 @@
     <Compile Include="Areas\HelpPage\SampleGeneration\SampleDirection.cs" />
     <Compile Include="Areas\HelpPage\SampleGeneration\TextSample.cs" />
     <Compile Include="Areas\HelpPage\XmlDocumentationProvider.cs" />
+    <Compile Include="Auth2\AuthorizeAttribute.cs" />
+    <Compile Include="Auth2\MyAuthorizationServerProvider.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\InfoClientController.cs" />
     <Compile Include="Controllers\ValuesController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\ACCESO.cs">
+      <DependentUpon>SisacModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="Models\AccountBindingModels.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
+    <Compile Include="Models\ACTIVIDAD.cs">
+      <DependentUpon>SisacModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\AGRARIA.cs">
+      <DependentUpon>SisacModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ALCALDESPROV.cs">
+      <DependentUpon>SisacModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ALCDIS.cs">
+      <DependentUpon>SisacModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ALMACE.cs">
+      <DependentUpon>SisacModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\AMNISTIA.cs">
+      <DependentUpon>SisacModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ASIGNACION.cs">
+      <DependentUpon>SisacModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\AUTORIZA.cs">
+      <DependentUpon>SisacModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\AYUDANTE.cs">
+      <DependentUpon>SisacModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\AYUDANTE_PUESTO.cs">
+      <DependentUpon>SisacModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\BACK_PERSONAL.cs">
+      <DependentUpon>SisacModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\BANCO.cs">
+      <DependentUpon>SisacModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\CABECERA.cs">
+      <DependentUpon>SisacModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\CABECOB.cs">
+      <DependentUpon>SisacModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\CABECOBDANTE.cs">
+      <DependentUpon>SisacModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\CABERECIBO.cs">
+      <DependentUpon>SisacModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\CABEVEN.cs">
+      <DependentUpon>SisacModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\CABMENU.cs">
+      <DependentUpon>SisacModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\CATEGORIA.cs">
+      <DependentUpon>SisacModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\COB_TESORERIA.cs">
+      <DependentUpon>SisacModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\CODMOV.cs">
+      <DependentUpon>SisacModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\COLOR.cs">
+      <DependentUpon>SisacModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\COMITE.cs">
+      <DependentUpon>SisacModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\CONCEPTO.cs">
+      <DependentUpon>SisacModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\CONDICION.cs">
+      <DependentUpon>SisacModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\CONDUCTOR.cs">
+      <DependentUpon>SisacModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\CONDUCTOR_PUESTO.cs">
+      <DependentUpon>SisacModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\CONDUCTOR_PUESTO_LOG.cs">
+      <DependentUpon>SisacModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\CONSUMO.cs">
+      <DependentUpon>SisacModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\CONTRI.cs">
+      <DependentUpon>SisacModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\COORDCER.cs">
+      <DependentUpon>SisacModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\CORREC.cs">
+      <DependentUpon>SisacModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\CORREC01.cs">
+      <DependentUpon>SisacModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\CORRELAT.cs">
+      <DependentUpon>SisacModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\CTACTE.cs">
+      <DependentUpon>SisacModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\CTACTE229.cs">
+      <DependentUpon>SisacModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\CTACTE519.cs">
+      <DependentUpon>SisacModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\CTACTE519A.cs">
+      <DependentUpon>SisacModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\CTACTEFEB.cs">
+      <DependentUpon>SisacModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\CTACTEMAY.cs">
+      <DependentUpon>SisacModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\CTACTEPARAISO.cs">
+      <DependentUpon>SisacModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\CTACTE_ABR.cs">
+      <DependentUpon>SisacModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\CTACTE_ABR2006.cs">
+      <DependentUpon>SisacModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\CTACTE_ABRIL.cs">
+      <DependentUpon>SisacModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\CTACTE_AGO.cs">
+      <DependentUpon>SisacModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\CTACTE_AGO2006.cs">
+      <DependentUpon>SisacModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\CTACTE_AGO2007.cs">
+      <DependentUpon>SisacModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\CTACTE_AGOSTO.cs">
+      <DependentUpon>SisacModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\CTACTE_AGOSTO2005.cs">
+      <DependentUpon>SisacModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\CTACTE_AMINISTIA.cs">
+      <DependentUpon>SisacModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\CTACTE_ANGEL.cs">
+      <DependentUpon>SisacModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\CTACTE_BORRAR.cs">
+      <DependentUpon>SisacModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\CTACTE_DIC.cs">
+      <DependentUpon>SisacModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\CTACTE_DIC2005.cs">
+      <DependentUpon>SisacModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\CTACTE_ENE.cs">
+      <DependentUpon>SisacModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\CTACTE_FECHAS.cs">
+      <DependentUpon>SisacModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\CTACTE_INCENDIO_SIN_PAGO.cs">
+      <DependentUpon>SisacModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\CTACTE_JUL.cs">
+      <DependentUpon>SisacModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\CTACTE_JULIO.cs">
+      <DependentUpon>SisacModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\CTACTE_JULIO2005.cs">
+      <DependentUpon>SisacModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\CTACTE_JUN.cs">
+      <DependentUpon>SisacModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\CTACTE_JUN2006.cs">
+      <DependentUpon>SisacModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\CTACTE_JUNIO.cs">
+      <DependentUpon>SisacModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\CTACTE_MAR.cs">
+      <DependentUpon>SisacModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\CTACTE_MAR2011.cs">
+      <DependentUpon>SisacModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\CTACTE_MARZO.cs">
+      <DependentUpon>SisacModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\CTACTE_MAY.cs">
+      <DependentUpon>SisacModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\CTACTE_MIGRA.cs">
+      <DependentUpon>SisacModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\CTACTE_NOV.cs">
+      <DependentUpon>SisacModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\CTACTE_NOV2005.cs">
+      <DependentUpon>SisacModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\CTACTE_REP.cs">
+      <DependentUpon>SisacModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\CTACTE_REPA.cs">
+      <DependentUpon>SisacModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\CTACTE_REPF.cs">
+      <DependentUpon>SisacModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\CTACTE_SET.cs">
+      <DependentUpon>SisacModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\CTACTE_SET2005.cs">
+      <DependentUpon>SisacModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\CTACTE_SET2006.cs">
+      <DependentUpon>SisacModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\CTAFEC.cs">
+      <DependentUpon>SisacModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\DATACT.cs">
+      <DependentUpon>SisacModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\DEPACT.cs">
+      <DependentUpon>SisacModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\DEPARTAMENTO.cs">
+      <DependentUpon>SisacModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\DEPARTAMENTO_P.cs">
+      <DependentUpon>SisacModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\DEPENDENCIA.cs">
+      <DependentUpon>SisacModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\DEPENDENCIA_COPIA.cs">
+      <DependentUpon>SisacModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\DEPENDENCIA_P.cs">
+      <DependentUpon>SisacModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\DESABILITADOS.cs">
+      <DependentUpon>SisacModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\DETALLE.cs">
+      <DependentUpon>SisacModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\DETALLE_PER_DEP_COPIA.cs">
+      <DependentUpon>SisacModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\DETCOB.cs">
+      <DependentUpon>SisacModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\DETCOBDANTE.cs">
+      <DependentUpon>SisacModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\DETEVEN.cs">
+      <DependentUpon>SisacModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\DETMENU.cs">
+      <DependentUpon>SisacModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\DETPAG.cs">
+      <DependentUpon>SisacModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\DETPAGDANTE.cs">
+      <DependentUpon>SisacModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\DETRECA.cs">
+      <DependentUpon>SisacModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\DIRECC.cs">
+      <DependentUpon>SisacModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\DISTRITO.cs">
+      <DependentUpon>SisacModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\DISTRITOS.cs">
+      <DependentUpon>SisacModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\DISTRITOWW.cs">
+      <DependentUpon>SisacModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\DISTRITO_P.cs">
+      <DependentUpon>SisacModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\DROPPARAISO.cs">
+      <DependentUpon>SisacModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\DROPPARAISO2.cs">
+      <DependentUpon>SisacModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ENCUESTA.cs">
+      <DependentUpon>SisacModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ENE2005.cs">
+      <DependentUpon>SisacModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ESPACT.cs">
+      <DependentUpon>SisacModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ESTADO_PROCESO.cs">
+      <DependentUpon>SisacModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\F080.cs">
+      <DependentUpon>SisacModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\F101.cs">
+      <DependentUpon>SisacModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\F107.cs">
+      <DependentUpon>SisacModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\F114.cs">
+      <DependentUpon>SisacModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\F120.cs">
+      <DependentUpon>SisacModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\F121.cs">
+      <DependentUpon>SisacModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\FACAJUS.cs">
+      <DependentUpon>SisacModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\FACTOR.cs">
+      <DependentUpon>SisacModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\FACTOR_BACK.cs">
+      <DependentUpon>SisacModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\FICONTC.cs">
+      <DependentUpon>SisacModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\FRONTECU.cs">
+      <DependentUpon>SisacModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\GIRO.cs">
+      <DependentUpon>SisacModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\GRIDIS.cs">
+      <DependentUpon>SisacModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="Models\IdentityModels.cs" />
+    <Compile Include="Models\ING012004741.cs">
+      <DependentUpon>SisacModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ING012004742.cs">
+      <DependentUpon>SisacModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\INGGRI.cs">
+      <DependentUpon>SisacModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\INTERES.cs">
+      <DependentUpon>SisacModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\INTERIOR.cs">
+      <DependentUpon>SisacModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\JULIOCTACTE.cs">
+      <DependentUpon>SisacModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\JUNIO2004.cs">
+      <DependentUpon>SisacModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\MARCA.cs">
+      <DependentUpon>SisacModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\MERCADO.cs">
+      <DependentUpon>SisacModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\MIGRA01B.cs">
+      <DependentUpon>SisacModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\MIGRA02B.cs">
+      <DependentUpon>SisacModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\MIGRA03B.cs">
+      <DependentUpon>SisacModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\MODULO.cs">
+      <DependentUpon>SisacModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\MODULOS.cs">
+      <DependentUpon>SisacModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\MORA080.cs">
+      <DependentUpon>SisacModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\MORA101.cs">
+      <DependentUpon>SisacModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\MORA107.cs">
+      <DependentUpon>SisacModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\MORA112.cs">
+      <DependentUpon>SisacModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\MORA113.cs">
+      <DependentUpon>SisacModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\MORA114.cs">
+      <DependentUpon>SisacModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\MORA120.cs">
+      <DependentUpon>SisacModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\MORA121.cs">
+      <DependentUpon>SisacModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\MORA_MARZO.cs">
+      <DependentUpon>SisacModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\MOVACF.cs">
+      <DependentUpon>SisacModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\MOVACT.cs">
+      <DependentUpon>SisacModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\MOVING01.cs">
+      <DependentUpon>SisacModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\MOVING01B.cs">
+      <DependentUpon>SisacModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\MOVING02.cs">
+      <DependentUpon>SisacModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\MOVING02B.cs">
+      <DependentUpon>SisacModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\MOVING03.cs">
+      <DependentUpon>SisacModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\MOVING03B.cs">
+      <DependentUpon>SisacModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\MOVVEH.cs">
+      <DependentUpon>SisacModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\MOVVEH_TEMP.cs">
+      <DependentUpon>SisacModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\NIVEL.cs">
+      <DependentUpon>SisacModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\NUM_COB.cs">
+      <DependentUpon>SisacModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\OBJ_RESOLUCION.cs">
+      <DependentUpon>SisacModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\OFICINA.cs">
+      <DependentUpon>SisacModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\PAIS.cs">
+      <DependentUpon>SisacModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\PAIS_P.cs">
+      <DependentUpon>SisacModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\PANTALLA.cs">
+      <DependentUpon>SisacModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\PERSONAL.cs">
+      <DependentUpon>SisacModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\PERSONALBACKUP.cs">
+      <DependentUpon>SisacModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\PERSONALTEMP.cs">
+      <DependentUpon>SisacModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\PERSONAL_DEPENDENCIA_P.cs">
+      <DependentUpon>SisacModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\PERSONAL_P.cs">
+      <DependentUpon>SisacModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\PILOTO.cs">
+      <DependentUpon>SisacModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\PILVEH.cs">
+      <DependentUpon>SisacModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\PILVEH_TEMP.cs">
+      <DependentUpon>SisacModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\PROFESION.cs">
+      <DependentUpon>SisacModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\PROVEED.cs">
+      <DependentUpon>SisacModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\PROVICIONAL.cs">
+      <DependentUpon>SisacModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\PROVINC.cs">
+      <DependentUpon>SisacModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\PROVINCIA.cs">
+      <DependentUpon>SisacModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\PROVINCIA_P.cs">
+      <DependentUpon>SisacModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\PUESTO.cs">
+      <DependentUpon>SisacModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\PUESTO_EMP.cs">
+      <DependentUpon>SisacModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\PUESTO_EMP2004.cs">
+      <DependentUpon>SisacModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\REPUEST.cs">
+      <DependentUpon>SisacModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\REVISION.cs">
+      <DependentUpon>SisacModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\SALGRI.cs">
+      <DependentUpon>SisacModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\SERV_REP.cs">
+      <DependentUpon>SisacModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\SisacModel.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SisacModel.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\SisacModel.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SisacModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\SisacModel.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SisacModel.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Models\SISTAB.cs">
+      <DependentUpon>SisacModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\T080.cs">
+      <DependentUpon>SisacModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\T080S.cs">
+      <DependentUpon>SisacModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\T101.cs">
+      <DependentUpon>SisacModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\T101S.cs">
+      <DependentUpon>SisacModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\T107.cs">
+      <DependentUpon>SisacModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\T107S.cs">
+      <DependentUpon>SisacModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\T112.cs">
+      <DependentUpon>SisacModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\T113.cs">
+      <DependentUpon>SisacModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\T114.cs">
+      <DependentUpon>SisacModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\T114S.cs">
+      <DependentUpon>SisacModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\T115.cs">
+      <DependentUpon>SisacModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\T120.cs">
+      <DependentUpon>SisacModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\T120S.cs">
+      <DependentUpon>SisacModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\T121.cs">
+      <DependentUpon>SisacModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\T566.cs">
+      <DependentUpon>SisacModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\T566A.cs">
+      <DependentUpon>SisacModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\TABMORA2005.cs">
+      <DependentUpon>SisacModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\TB54.cs">
+      <DependentUpon>SisacModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\TB54A.cs">
+      <DependentUpon>SisacModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\TBLFIN.cs">
+      <DependentUpon>SisacModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\TBLRES.cs">
+      <DependentUpon>SisacModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\TBLSEG.cs">
+      <DependentUpon>SisacModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\TBMONTOCONTRATO.cs">
+      <DependentUpon>SisacModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\TB_OPCION.cs">
+      <DependentUpon>SisacModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\TB_PERFIL.cs">
+      <DependentUpon>SisacModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\TB_TIPO_DOCUMENTO.cs">
+      <DependentUpon>SisacModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\TB_TIPO_OPCION.cs">
+      <DependentUpon>SisacModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\TB_USUARIO.cs">
+      <DependentUpon>SisacModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\TDOALM.cs">
+      <DependentUpon>SisacModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\TEMP84.cs">
+      <DependentUpon>SisacModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\TEMPALAMIS.cs">
+      <DependentUpon>SisacModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\TEMP_DEPENDENCIA.cs">
+      <DependentUpon>SisacModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\TEMP_PERSONAL.cs">
+      <DependentUpon>SisacModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\TIPCOMB.cs">
+      <DependentUpon>SisacModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\TIPMOT.cs">
+      <DependentUpon>SisacModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\TIPMOV.cs">
+      <DependentUpon>SisacModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\TIPVEH.cs">
+      <DependentUpon>SisacModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\TIP_PAGO.cs">
+      <DependentUpon>SisacModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\TIP_RESOLUCION.cs">
+      <DependentUpon>SisacModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\TMORA.cs">
+      <DependentUpon>SisacModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\USUARIO.cs">
+      <DependentUpon>SisacModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\USUARIOS.cs">
+      <DependentUpon>SisacModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\VEHICULO.cs">
+      <DependentUpon>SisacModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\VIA.cs">
+      <DependentUpon>SisacModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Providers\ApplicationOAuthProvider.cs" />
     <Compile Include="Results\ChallengeResult.cs" />
     <Compile Include="Startup.cs" />
+    <Compile Include="Utilities\AuthRepository.cs" />
+    <Compile Include="Utilities\Hashing.cs" />
+    <Compile Include="Utilities\Util.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Areas\HelpPage\HelpPage.css" />
@@ -270,6 +967,16 @@
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
+    <Content Include="Models\SisacModel.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>SisacModel.edmx</DependentUpon>
+      <LastGenOutput>SisacModel.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Models\SisacModel.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>SisacModel.edmx</DependentUpon>
+      <LastGenOutput>SisacModel.cs</LastGenOutput>
+    </Content>
     <Content Include="Scripts\ai.0.22.9-build00167.js" />
     <Content Include="Scripts\ai.0.22.9-build00167.min.js" />
     <Content Include="Scripts\bootstrap.js" />
@@ -295,6 +1002,13 @@
     <Content Include="Areas\HelpPage\Views\Help\Api.cshtml" />
     <Content Include="ApplicationInsights.config">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <EntityDeploy Include="Models\SisacModel.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>SisacModel.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="Models\SisacModel.edmx.diagram">
+      <DependentUpon>SisacModel.edmx</DependentUpon>
     </Content>
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
@@ -334,6 +1048,9 @@
     <Content Include="packages.config" />
     <None Include="Project_Readme.html" />
     <Content Include="Scripts\jquery-1.10.2.min.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
