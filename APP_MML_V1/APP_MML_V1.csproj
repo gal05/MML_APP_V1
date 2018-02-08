@@ -256,6 +256,7 @@
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\InfoClientController.cs" />
+    <Compile Include="Controllers\Recaudacion_puestoController.cs" />
     <Compile Include="Controllers\ValuesController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -791,6 +792,7 @@
     <Compile Include="Models\PUESTO_EMP2004.cs">
       <DependentUpon>SisacModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\RecaudacionPuesto.cs" />
     <Compile Include="Models\REPUEST.cs">
       <DependentUpon>SisacModel.tt</DependentUpon>
     </Compile>
@@ -958,6 +960,7 @@
     <Compile Include="Results\ChallengeResult.cs" />
     <Compile Include="Startup.cs" />
     <Compile Include="Utilities\AuthRepository.cs" />
+    <Compile Include="Utilities\Consulta.cs" />
     <Compile Include="Utilities\Hashing.cs" />
     <Compile Include="Utilities\Util.cs" />
   </ItemGroup>
